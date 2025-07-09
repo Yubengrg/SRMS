@@ -1,0 +1,1767 @@
+/* Dashboard.css - Culinary Command Dark Theme with Scroll Fix */
+
+html, body, #root, [data-reactroot] {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+:root {
+  /* Main Color Scheme */
+  --primary-color: #FFB930 !important;
+  --primary-dark: #F59F00 !important;
+  --primary-light: #FFCD5C !important;
+  
+  /* Background Colors - Dark Theme */
+  --sidebar-color: #1E2235;
+  --sidebar-hover: #262C46;
+  --background-color: #1A1E2D; /* Dark main content background */
+  --card-bg: #242A3D; /* Dark card background */
+  --header-bg: #1A1E2D; /* Match main content */
+  
+  /* Text Colors for Dark Theme */
+  --text-color-dark: #FFFFFF !important; /* Bright white for important text */
+  --text-color: #D1D5DB !important; /* Light gray for normal text */
+  --text-color-light: #A5B1CD !important; /* Lighter gray for secondary text */
+  --text-sidebar: #A5B1CD !important;
+  --text-sidebar-active: #FFFFFF !important;
+  
+  /* Status Colors */
+  --danger-color: #E53E3E;
+  --warning-color: #F59F00;
+  --success-color: #FFB930; /* Changed from #38A169 (green) to gold */
+  --info-color: #4299E1;
+  
+  /* Functional Colors */
+  --revenue-color: #FFB930;  /* Changed from #38A169 (green) to gold */
+  --orders-color: #4299E1;   /* Blue - unchanged */
+  --tables-color: #805AD5;   /* Purple - unchanged */
+  --menu-color: #ED8936;     /* Orange - unchanged */
+  --inventory-color: #F59F00; /* Yellow - unchanged */
+  
+  /* Layout */
+  --sidebar-width: 250px;
+  --header-height: 64px;
+  --border-radius: 12px;
+  --card-border-radius: 12px;
+  --button-border-radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* Prevent body scrolling */
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevent container scrolling */
+}
+
+/* Sidebar - Culinary Command Design */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--sidebar-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  overflow-y: auto; /* Allow sidebar to scroll if needed */
+}
+
+/* Logo Container */
+.logo-container {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-logo {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo i {
+  color: var(--sidebar-color);
+  font-size: 1.5rem;
+}
+
+.brand-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.brand-name h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.nav-group-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-sidebar);
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--button-border-radius);
+  color: var(--text-sidebar);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  background-color: var(--sidebar-hover);
+  color: white;
+}
+
+.nav-item i {
+  font-size: 1.1rem;
+  color: var(--text-sidebar);
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover i {
+  color: white;
+}
+
+.nav-item.active {
+  background-color: rgba(255, 185, 48, 0.15);
+  color: white;
+}
+
+.nav-item.active i {
+  color: var(--primary-color);
+}
+
+.active-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  right: 1rem;
+}
+
+/* Quick Action Button in Sidebar */
+.sidebar-action {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.new-order-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--button-border-radius);
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+  color: var(--sidebar-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(245, 159, 0, 0.2);
+}
+
+.new-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 159, 0, 0.3);
+}
+
+/* Main Wrapper */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--background-color);
+  margin-left: var(--sidebar-width); /* Offset for fixed sidebar */
+  width: calc(100% - var(--sidebar-width)); /* Adjust width accounting for sidebar */
+  overflow: hidden; /* Prevent wrapper scrolling */
+}
+
+/* Header */
+.dashboard-header {
+  height: var(--header-height);
+  background-color: var(--header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: sticky; /* Keep header at top */
+  top: 0;
+  z-index: 5;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #FFFFFF !important;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.current-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color-light);
+  font-size: 0.85rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
+  width: 240px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 185, 48, 0.15);
+}
+
+.search-bar input::placeholder {
+  color: var(--text-color-light);
+}
+
+.search-bar i {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+}
+
+/* Notifications */
+.notifications {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notifications:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notifications i {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.notifications .badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--danger-color);
+  color: white;
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* User Profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white !important;
+  margin: 0;
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+}
+
+.logout-button {
+  background-color: transparent;
+  color: var(--text-color-light);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--danger-color);
+}
+
+/* Main Content - SCROLL FIX */
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto; /* Allow content to scroll */
+  height: calc(100vh - var(--header-height)); /* Full height minus header */
+}
+
+/* Loading Indicator */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 50vh;
+  color: var(--text-color-light);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Message */
+.error-message {
+  background-color: rgba(229, 62, 62, 0.1);
+  border: 1px solid rgba(229, 62, 62, 0.2);
+  border-radius: var(--card-border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-message p {
+  color: var(--danger-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.error-message button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--button-border-radius);
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #C53030;
+}
+
+.select-restaurant-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.select-restaurant-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Overview Container */
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 1.25rem;
+}
+
+.stat-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+/* Changed revenue icon to gold */
+.revenue-icon {
+  background-color: rgba(255, 185, 48, 0.15);
+  color: var(--revenue-color);
+}
+
+/* Keep other icons with their original colors */
+.orders-icon {
+  background-color: rgba(66, 153, 225, 0.1);
+  color: var(--orders-color);
+}
+
+.tables-icon {
+  background-color: rgba(128, 90, 213, 0.1);
+  color: var(--tables-color);
+}
+
+.inventory-icon {
+  background-color: rgba(245, 159, 0, 0.1);
+  color: var(--inventory-color);
+}
+
+.stat-trend {
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Changed to gold */
+.stat-trend-up {
+  background-color: rgba(255, 185, 48, 0.15);
+  color: var(--success-color);
+}
+
+.stat-trend-down {
+  background-color: rgba(229, 62, 62, 0.15);
+  color: var(--danger-color);
+}
+
+.stat-percentage {
+  background-color: rgba(128, 90, 213, 0.1);
+  color: var(--tables-color);
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.stat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+
+/* Changed trend info color to gold */
+.stat-trend-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--success-color);
+  margin: 0;
+}
+
+.stat-alert-info {
+  font-size: 0.8rem;
+  color: var(--text-color-light);
+}
+
+.table-progress {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(128, 90, 213, 0.1);
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+/* No change needed for table progress bar as it already uses tables-color (purple) */
+.table-progress-bar {
+  height: 100%;
+  background-color: var(--tables-color);
+  border-radius: 3px;
+}
+
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.view-all-btn:hover {
+  color: var(--primary-light);
+}
+
+/* Orders Table Card */
+.orders-table-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin: 0;
+}
+
+.orders-table-container {
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.orders-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-color-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orders-table td {
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orders-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.order-id {
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.order-time {
+  color: var(--text-color-light);
+}
+
+.order-amount {
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.order-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.order-status-new {
+  background-color: rgba(245, 159, 0, 0.1);
+  color: var(--warning-color);
+}
+
+.order-status-in-progress {
+  background-color: rgba(66, 153, 225, 0.1);
+  color: var(--info-color);
+}
+
+/* Changed completed status to gold */
+.order-status-completed {
+  background-color: rgba(255, 185, 48, 0.15);
+  color: var(--success-color);
+}
+
+.order-status-payment {
+  background-color: rgba(128, 90, 213, 0.1);
+  color: var(--tables-color);
+}
+
+/* Two Column Grid */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Popular Items Card */
+.popular-items-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.popular-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.popular-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: var(--button-border-radius);
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: all 0.2s ease;
+}
+
+.popular-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.popular-item-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background-color: rgba(237, 137, 54, 0.1);
+  color: var(--menu-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.popular-item-info {
+  flex: 1;
+}
+
+.popular-item-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin: 0 0 0.2rem 0;
+}
+
+.popular-item-info p {
+  font-size: 0.8rem;
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+.popular-item-trend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+/* Sales Chart Card */
+.sales-chart-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chart-filter {
+  display: flex;
+}
+
+.chart-filter-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chart-filter-btn:hover {
+  color: var(--text-color-dark);
+}
+
+.chart-filter-active {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 20px;
+}
+
+.chart-filter-active:hover {
+  color: white;
+}
+
+.chart-container {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-color-light);
+  opacity: 0.5;
+}
+
+.placeholder-chart i {
+  font-size: 2.5rem;
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--button-border-radius);
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.quick-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.quick-action-btn i {
+  font-size: 1.1rem;
+}
+
+.primary-action {
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+}
+
+/* Other Tab Styles */
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 300px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.coming-soon h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color-dark);
+}
+
+.coming-soon button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coming-soon button:hover {
+  background-color: var(--primary-dark);
+}
+
+.staff-tab-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 300px;
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.staff-management-button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.staff-management-button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Make sure nested content fills properly */
+#orders-tab-container,
+#inventory-tab-container,
+#menu-tab-container,
+#tables-tab-container,
+#staff-tab-container,
+#payments-tab-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Today's labels in dashboard */
+.today-label,
+.active-label,
+.items-label {
+  color: var(--text-color-light) !important;
+}
+
+/* Fix text visibility in table content */
+.orders-table tbody tr td {
+  color: var(--text-color) !important;
+}
+
+/* Fix any darkened text */
+.text-light {
+  color: var(--text-color-light) !important;
+}
+
+.text-dark {
+  color: var(--text-color-dark) !important;
+}
+
+/* Dashboard visibility fixes */
+.dashboard-title,
+.card-title,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color-dark) !important;
+}
+
+/* Enhanced visibility for important values */
+.stat-value,
+.order-id,
+.order-amount {
+  color: var(--text-color-dark) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix any remaining green color that might be present */
+.success-icon,
+.success-text,
+.completed-status {
+  color: var(--success-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .two-column-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 70px;
+    min-width: 70px;
+  }
+  
+  .main-wrapper {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+  }
+  
+  .logo-container {
+    justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+  
+  .brand-name {
+    display: none;
+  }
+  
+  .nav-group-label {
+    display: none;
+  }
+  
+  .nav-item span {
+    display: none;
+  }
+  
+  .nav-item {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+  
+  .nav-item i {
+    margin: 0;
+  }
+  
+  .active-indicator {
+    display: none;
+  }
+  
+  .sidebar-action {
+    padding: 0.75rem;
+  }
+  
+  .new-order-btn span {
+    display: none;
+  }
+  
+  .new-order-btn {
+    padding: 0.75rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .page-title {
+    font-size: 1.25rem;
+  }
+  
+  .search-bar {
+    display: none;
+  }
+  
+  .user-details {
+    display: none;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
+/* Additional CSS styles to add to Dashboard.css */
+
+/* Add cancelled status styling */
+.order-status-cancelled {
+  background-color: rgba(229, 62, 62, 0.15);
+  color: var(--danger-color);
+}
+
+/* Enhance loading and empty states */
+.orders-table-loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color-light);
+}
+
+.orders-table-loading i {
+  margin-right: 0.5rem;
+}
+
+.orders-table-error {
+  padding: 2rem;
+  text-align: center;
+}
+
+.orders-table-error p {
+  color: var(--danger-color);
+  margin-bottom: 1rem;
+}
+
+.orders-table-error button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.orders-table-error button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.orders-table-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color-light);
+}
+
+.orders-table-empty i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.5;
+}
+
+.orders-table-empty p {
+  margin: 0;
+}
+
+.orders-table-empty p:first-of-type {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.orders-table-empty p:last-of-type {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Enhanced view all button styling */
+.orders-table-footer {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orders-table-footer button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  fontSize: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.orders-table-footer button:hover {
+  color: var(--primary-light);
+  transform: translateX(2px);
+}
+
+.orders-table-footer button i {
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.orders-table-footer button:hover i {
+  transform: translateX(2px);
+}
+
+/* Analytics Dashboard CSS - Add to Dashboard.css */
+
+/* Analytics Section Styling */
+.analytics-dashboard-container {
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Analytics Summary Cards */
+.analytics-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-summary-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.analytics-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Analytics Chart Container */
+.analytics-chart-container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-bottom: 1.5rem;
+}
+
+.analytics-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.analytics-chart-title {
+  margin: 0;
+  color: var(--text-color-dark);
+  fontSize: 1.1rem;
+  font-weight: 600;
+}
+
+/* Period Selection Buttons */
+.analytics-period-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.analytics-period-btn {
+  padding: 0.4rem 0.8rem;
+  fontSize: 0.8rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-color-light);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.analytics-period-btn:hover {
+  color: var(--text-color-dark);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.analytics-period-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+/* Chart Type Buttons */
+.analytics-chart-type-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.analytics-chart-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  fontSize: 0.8rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-color-light);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.analytics-chart-type-btn:hover {
+  color: var(--text-color-dark);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.analytics-chart-type-btn.active {
+  background: rgba(255, 185, 48, 0.15);
+  color: var(--primary-color);
+  border-color: rgba(255, 185, 48, 0.3);
+}
+
+/* Analytics Grid Layouts */
+.analytics-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Popular Items Section */
+.analytics-popular-items {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.analytics-popular-items-list {
+  margin-top: 1rem;
+}
+
+.analytics-popular-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.analytics-popular-item:last-child {
+  border-bottom: none;
+}
+
+.analytics-popular-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analytics-popular-item-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.analytics-popular-item-name {
+  fontSize: 0.85rem;
+  color: var(--text-color);
+}
+
+.analytics-popular-item-value {
+  fontSize: 0.8rem;
+  color: var(--text-color-light);
+  font-weight: 600;
+}
+
+/* Payment Methods Grid */
+.analytics-payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-payment-method-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.2s ease;
+}
+
+.analytics-payment-method-card:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.analytics-payment-method-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.analytics-payment-method-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fontSize: 0.9rem;
+  font-weight: 700;
+}
+
+.analytics-payment-method-name {
+  fontSize: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.analytics-payment-method-count {
+  fontSize: 0.8rem;
+  color: var(--text-color-light);
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+/* Revenue Comparison Section */
+.analytics-revenue-comparison {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.analytics-revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-revenue-card {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.analytics-revenue-card.current {
+  background: rgba(255, 185, 48, 0.05);
+  border-color: rgba(255, 185, 48, 0.1);
+}
+
+.analytics-revenue-card.previous {
+  background: rgba(255,255,255,0.02);
+}
+
+.analytics-revenue-card.growth {
+  background: rgba(255,255,255,0.02);
+}
+
+.analytics-revenue-card-title {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color-dark);
+  fontSize: 0.9rem;
+  font-weight: 600;
+}
+
+.analytics-revenue-card-value {
+  margin: 0 0 0.5rem 0;
+  fontSize: 1.4rem;
+  font-weight: 700;
+}
+
+.analytics-revenue-card-subtitle {
+  margin: 0;
+  fontSize: 0.8rem;
+  color: var(--text-color-light);
+}
+
+/* Growth Indicators */
+.analytics-growth-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.analytics-growth-label {
+  fontSize: 0.8rem;
+  color: var(--text-color-light);
+}
+
+.analytics-growth-value {
+  fontSize: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Loading States */
+.analytics-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: var(--text-color-light);
+}
+
+.analytics-loading-content {
+  text-align: center;
+}
+
+.analytics-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 185, 48, 0.1);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: analytics-spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes analytics-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.analytics-error {
+  background: rgba(229, 62, 62, 0.1);
+  border: 1px solid rgba(229, 62, 62, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--danger-color);
+}
+
+.analytics-error-icon {
+  margin-right: 0.5rem;
+}
+
+/* Trend Icons and Colors */
+.analytics-trend-up {
+  color: var(--success-color);
+}
+
+.analytics-trend-down {
+  color: var(--danger-color);
+}
+
+.analytics-trend-neutral {
+  color: var(--text-color-light);
+}
+
+/* Chart Tooltip Customization */
+.analytics-tooltip {
+  background-color: var(--card-bg) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 8px !important;
+  color: var(--text-color) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+
+/* Responsive Design for Analytics */
+@media (max-width: 1200px) {
+  .analytics-main-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analytics-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .analytics-revenue-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analytics-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .analytics-period-buttons,
+  .analytics-chart-type-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .analytics-payment-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-payment-methods-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analytics-period-buttons,
+  .analytics-chart-type-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .analytics-period-btn,
+  .analytics-chart-type-btn {
+    justify-content: center;
+  }
+}
+
+/* Analytics Tab Specific Container */
+#analytics-tab-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* Integration with existing Dashboard styles */
+.analytics-dashboard-container .stat-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-border-radius);
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.analytics-dashboard-container .stat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Ensure analytics content respects dark theme */
+.analytics-dashboard-container * {
+  box-sizing: border-box;
+}
+
+.analytics-dashboard-container .recharts-text {
+  fill: var(--text-color-light) !important;
+}
+
+.analytics-dashboard-container .recharts-cartesian-axis-line,
+.analytics-dashboard-container .recharts-cartesian-axis-tick-line {
+  stroke: rgba(255,255,255,0.1) !important;
+}
+
+.analytics-dashboard-container .recharts-cartesian-grid-horizontal line,
+.analytics-dashboard-container .recharts-cartesian-grid-vertical line {
+  stroke: rgba(255,255,255,0.1) !important;
+}
+
+/* Analytics Navigation Item */
+.nav-item[data-tab="analytics"] {
+  position: relative;
+}
+
+.nav-item[data-tab="analytics"]::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--primary-color);
+  border-radius: 1.5px;
+  transition: height 0.2s ease;
+}
+
+.nav-item[data-tab="analytics"].active::before {
+  height: 60%;
+}
+
+/* Ensure proper spacing in analytics dashboard */
+.analytics-dashboard-container > * + * {
+  margin-top: 1.5rem;
+}
+
+.analytics-dashboard-container > *:first-child {
+  margin-top: 0;
+}

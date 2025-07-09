@@ -1,0 +1,51 @@
+/* Add these styles to your RestaurantSelection.css file */
+
+.restaurant-selected {
+  border: 2px solid #4BD963;
+  box-shadow: 0 0 10px rgba(75, 217, 99, 0.5);
+}
+
+.debug-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #2c3e50;
+}
+
+.debug-section summary {
+  color: #6c757d;
+  cursor: pointer;
+  padding: 8px 0;
+  user-select: none;
+}
+
+.debug-section summary:hover {
+  color: #adb5bd;
+}
+
+.debug-content {
+  padding: 10px;
+  background-color: rgba(108, 117, 125, 0.1);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.debug-content p {
+  color: #adb5bd;
+  margin-bottom: 15px;
+}
+
+.debug-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.debug-button:hover {
+  background-color: #5a6268;
+}

@@ -1,0 +1,251 @@
+/* VerifyOTP.css */
+:root {
+  --dark-bg: #1c1e26;
+  --card-bg: #2a2d3a;
+  --text-color: #ffffff;
+  --muted-text: #a0a0a0;
+  --input-bg: #373a47;
+  --input-border: #404356;
+  --input-focus: #4b4f67;
+  --primary-color: #f7cc4c;
+  --primary-hover: #e5ba3c;
+  --error-color: #ff5c5c;
+  --success-color: #4caf50;
+  --link-color: #5c9eff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.verify-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.verify-container h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.verify-container p {
+  color: var(--muted-text);
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--muted-text);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--input-focus);
+  box-shadow: 0 0 0 2px rgba(247, 204, 76, 0.2);
+}
+
+/* OTP input boxes */
+.otp-input-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.otp-input-box {
+  width: 50px;
+  height: 60px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 24px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.otp-input-box:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: var(--input-focus);
+  box-shadow: 0 0 0 2px rgba(247, 204, 76, 0.2);
+}
+
+.verify-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: #2a2d3a;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+.verify-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.verify-btn:disabled {
+  background-color: var(--input-border);
+  color: var(--muted-text);
+  cursor: not-allowed;
+}
+
+.resend-link {
+  background: transparent;
+  border: none;
+  color: var(--link-color);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  display: block;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.resend-link:disabled {
+  color: var(--muted-text);
+  cursor: not-allowed;
+}
+
+.message-container {
+  margin-top: 16px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.success-message {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.error-message {
+  background-color: rgba(255, 92, 92, 0.1);
+  color: var(--error-color);
+  border: 1px solid rgba(255, 92, 92, 0.3);
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: var(--muted-text);
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--input-border);
+}
+
+.divider span {
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+  .verify-container {
+    margin: 20px 16px;
+    padding: 20px;
+  }
+  
+  .verify-container h2 {
+    font-size: 20px;
+  }
+  
+  .form-group input {
+    padding: 10px 14px;
+  }
+  
+  .otp-input-container {
+    gap: 6px;
+  }
+  
+  .otp-input-box {
+    width: 45px;
+    height: 55px;
+    font-size: 20px;
+  }
+  
+  .verify-btn {
+    padding: 10px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 360px) {
+  .verify-container {
+    padding: 16px;
+  }
+  
+  .otp-input-box {
+    width: 40px;
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .form-group label {
+    margin-bottom: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+}

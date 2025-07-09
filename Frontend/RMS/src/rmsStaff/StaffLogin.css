@@ -1,0 +1,298 @@
+/* StaffLogin.css - Dark Theme Staff Login */
+:root {
+  --dark-bg: #1a1e23;
+  --card-bg: #24292e;
+  --gold-accent: #f8c52c; /* Main gold color to match registration */
+  --text-color: #ffffff;
+  --input-bg: transparent; /* For underlined inputs */
+  --label-color: #ffffff;
+  --secondary-text: #b0b0b0;
+  --error-color: #ff5a5a;
+  --success-color: #4caf50;
+  --button-hover: #e6b31a;
+  --form-bg: #1e2433; /* Darker blue background */
+  --input-border: rgba(255, 255, 255, 0.3); /* Color for underlined inputs */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+}
+
+.staff-login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Left side with background image - similar to login page */
+.staff-login-side {
+  flex: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/path-to-your-city-image.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+.welcome-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.welcome-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--gold-accent);
+  margin-top: 0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer-links {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--gold-accent);
+}
+
+/* Right side with form */
+.staff-login-card-container {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--form-bg);
+  padding: 0;
+  overflow-y: auto;
+}
+
+.staff-login-card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--form-bg);
+  overflow: auto;
+  padding: 2.5rem !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.staff-login-card h2 {
+  font-size: 32px;
+  color: var(--gold-accent);
+  text-align: center;
+  margin: 0 0 40px 0;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.staff-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important;
+  margin-left: 2px;
+  display: block;
+}
+
+/* Gold staff login button */
+.staff-login-button {
+  height: 50px;
+  margin-top: 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--gold-accent);
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.staff-login-button:hover {
+  background-color: var(--button-hover);
+}
+
+.staff-login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--error-color);
+  text-align: center;
+  margin: 12px 0;
+  padding: 12px;
+  background-color: rgba(255, 90, 90, 0.1);
+  border-radius: 4px;
+  word-break: break-word;
+  font-size: 14px;
+  border-left: 3px solid var(--error-color);
+}
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+.form-footer p {
+  margin: 8px 0;
+}
+
+.form-footer a {
+  color: var(--gold-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.form-footer a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .staff-login-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+  
+  .staff-login-side {
+    flex: none;
+    height: 40vh;
+  }
+  
+  .staff-login-card-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .staff-login-card {
+    height: auto;
+    padding: 2rem 1.5rem !important;
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px !important;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 576px) {
+  .staff-login-side {
+    height: 30vh;
+  }
+  
+  .staff-login-card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .form-group {
+    gap: 6px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    height: 40px;
+  }
+}
+
+/* Underlined input style with !important to ensure they're applied */
+.staff-login-card-container .staff-login-card .staff-login-form .form-group input,
+.staff-login-card-container .staff-login-card .staff-login-form .form-group select,
+.staff-login-container .staff-login-card .form-group input,
+.staff-login-container .staff-login-card .form-group select,
+.form-group input,
+.form-group select {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 0 !important;
+  color: white !important;
+  box-shadow: none !important;
+  padding: 0 0 8px 0 !important;
+  height: 45px !important;
+}
+
+.staff-login-card-container .staff-login-card .staff-login-form .form-group input:focus,
+.staff-login-card-container .staff-login-card .staff-login-form .form-group select:focus,
+.staff-login-container .staff-login-card .form-group input:focus,
+.staff-login-container .staff-login-card .form-group select:focus,
+.form-group input:focus,
+.form-group select:focus {
+  outline: none !important;
+  border-bottom: 2px solid #f8c52c !important; /* Gold underline when focused */
+  box-shadow: none !important;
+}
+
+.staff-login-card-container .staff-login-card .staff-login-form .form-group input::placeholder,
+.staff-login-container .staff-login-card .form-group input::placeholder,
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Select dropdown styling */
+.form-group select option {
+  background-color: var(--form-bg);
+  color: var(--text-color);
+}

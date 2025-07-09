@@ -1,0 +1,1058 @@
+/* Table Management Dark Theme - Optimized Layout */
+
+/* Table Management Container */
+.table-management-container {
+  padding: 20px;
+  background-color: var(--background-color); /* Use dashboard background var */
+  min-height: 100vh;
+  position: relative;
+}
+
+.table-management-container.in-dashboard {
+  padding: 0;
+  min-height: auto;
+  color: var(--text-color);
+}
+
+/* Header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: var(--card-bg); /* Use dashboard card background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-table-header {
+  display: flex;
+  justify-content: flex-end; /* Align button to right */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.table-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--text-color-dark);
+}
+
+.back-button {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Optimized Filters Container - Now with Add Table Button */
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  background: var(--card-bg);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Add new class for single-line filters container */
+.single-line-filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: var(--card-bg);
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.filter-item label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.filter-item select {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 14px;
+  min-width: 130px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.filters-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex: 1;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 14px;
+  min-width: 130px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 185, 48, 0.15);
+}
+
+.reset-filters {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
+
+.reset-filters:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Reset filters button */
+.reset-filters-button {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-color);
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.reset-filters-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Add Table Button - Repositioned */
+.add-table-button {
+  padding: 8px 16px;
+  background: linear-gradient(to right, var(--primary-color, #FFB930), var(--primary-dark, #F59F00));
+  color: #1A1E2D;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 185, 48, 0.2);
+}
+
+.add-table-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 185, 48, 0.3);
+}
+
+/* Tables Grid - Improved to fit more cards */
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px; /* Increased from 15px to give more space between cards */
+  padding-bottom: 20px; /* Add padding at the bottom to prevent cut-off */
+  flex: 1;
+  overflow-y: auto; /* Make grid scrollable */
+  max-height: calc(100vh - 220px); /* Allow space for filters and padding */
+}
+
+/* Card Base - Match dark theme background */
+.table-card {
+  background: rgba(40, 30, 35, 0.7) !important; /* Dark background that matches theme */
+  border-radius: 6px;
+  padding: 12px; /* Reduced from 15px */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4) !important;
+  margin-bottom: 20px; /* Increased from 12px to give more space between rows */
+  position: relative;
+  border: none;
+  color: #e0e0e0 !important; /* Light text for dark background */
+  max-width: 100%;
+  border-left: none !important; /* Remove left border */
+}
+
+.table-card.inactive {
+  opacity: 0.7;
+  background: rgba(40, 30, 35, 0.4) !important;
+}
+
+/* Card Header - Reduce spacing and font sizes for narrower cards */
+.table-card .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; 
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+/* Add status dot before table number */
+.table-number-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Status dot styling */
+.status-dot {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 2px !important;
+}
+
+/* Status dot colors */
+.status-dot.status-available {
+  background-color: #4caf50 !important;
+}
+
+.status-dot.status-occupied {
+  background-color: #f44336 !important;
+}
+
+.status-dot.status-reserved {
+  background-color: #ff9800 !important;
+}
+
+.status-dot.status-maintenance {
+  background-color: #9e9e9e !important;
+}
+
+/* Table number with status color */
+.table-card.status-available .table-header h3 {
+  color: #4caf50 !important;
+}
+
+.table-card.status-occupied .table-header h3 {
+  color: #f44336 !important;
+}
+
+.table-card.status-reserved .table-header h3 {
+  color: #ff9800 !important;
+}
+
+.table-card.status-maintenance .table-header h3 {
+  color: #9e9e9e !important;
+}
+
+.table-card .table-header h3 {
+  margin: 0;
+  font-size: 16px; 
+  font-weight: 600;
+}
+
+/* Status badges - smaller for narrower cards */
+.status-badge {
+  padding: 4px 10px !important;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600 !important;
+  background-color: rgba(20, 15, 15, 0.5) !important;
+}
+
+.status-available {
+  background-color: rgba(76, 175, 80, 0.2) !important;
+  color: #4caf50 !important;
+}
+
+.status-occupied {
+  background-color: rgba(244, 67, 54, 0.2) !important;
+  color: #f44336 !important;
+}
+
+.status-reserved {
+  background-color: rgba(255, 152, 0, 0.2) !important;
+  color: #ff9800 !important;
+}
+
+.status-maintenance {
+  background-color: rgba(158, 158, 158, 0.2) !important;
+  color: #9e9e9e !important;
+}
+
+/* Table Details - Reduce spacing and font sizes */
+.table-details {
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 8px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: none;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #9ca3af !important; /* Lighter gray for dark background */
+  font-weight: 400 !important;
+}
+
+.detail-value {
+  font-size: 12px;
+  font-weight: 500 !important;
+  color: #d1d5db !important; /* Light color for dark background */
+}
+
+/* Customer link - Reduce spacing */
+.customer-link {
+  display: block;
+  color: #60a5fa !important; /* Brighter blue for dark background */
+  font-weight: 500 !important;
+  text-decoration: none;
+  margin: 6px 0;
+  font-size: 13px !important;
+}
+
+.customer-link:hover {
+  text-decoration: underline;
+}
+
+/* Table Actions - Reduce spacing */
+.table-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+/* Status dropdown - Reduce height and spacing */
+.status-select {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid rgba(120, 120, 120, 0.2) !important;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #d1d5db !important;
+  background-color: rgba(30, 25, 30, 0.8) !important;
+  margin-bottom: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  height: 26px;
+}
+
+.status-select:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 1px rgba(255, 185, 48, 0.15);
+}
+
+.status-actions {
+  width: 100%;
+}
+
+/* Card buttons grid - Reduce spacing */
+.card-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.qr-button, .edit-button, .delete-button {
+  padding: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+
+.qr-button {
+  background-color: #3182ce;
+  color: white;
+}
+
+.qr-button:hover {
+  background-color: #2c5282;
+}
+
+.edit-button {
+  background-color: #ecc94b;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #d69e2e;
+}
+
+.delete-button {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c53030;
+}
+
+/* Customer Info */
+.customer-info {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.customer-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 8px;
+}
+
+.customer-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 5px;
+}
+
+.guest-badge {
+  background-color: var(--info-color);
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.customer-details {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: var(--text-color-light);
+  margin-bottom: 5px;
+}
+
+.special-requests {
+  font-size: 13px;
+  color: var(--danger-color);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: var(--text-color-light);
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  color: var(--text-color-dark);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: var(--text-color-light);
+  margin-bottom: 20px;
+}
+
+.add-first-button {
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-first-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 159, 0, 0.3);
+}
+
+/* Loading & Error */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: var(--text-color-light);
+}
+
+.error-message {
+  background-color: rgba(229, 62, 62, 0.1);
+  color: var(--danger-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(229, 62, 62, 0.2);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal.large {
+  max-width: 800px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--card-bg);
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text-color-dark);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color-light);
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  color: var(--text-color-dark);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.modal form {
+  padding: 20px;
+  background-color: var(--card-bg);
+}
+
+.modal-body {
+  padding: 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 185, 48, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.checkbox-group label {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-left: 0;
+  color: var(--text-color);
+}
+
+.modal-actions {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: var(--card-bg);
+  border-radius: 0 0 10px 10px;
+}
+
+.cancel-button {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.save-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.save-button:disabled {
+  background-color: var(--text-color-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* QR Modal Styles */
+.qr-container {
+  text-align: center;
+}
+
+.qr-details {
+  margin-bottom: 20px;
+}
+
+.qr-details h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-color-dark);
+}
+
+.qr-details p {
+  color: var(--text-color-light);
+  margin: 5px 0;
+}
+
+.customer-info-qr {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.customer-info-qr .customer-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color-dark);
+  margin-bottom: 5px;
+}
+
+.qr-code-image {
+  margin: 20px 0;
+}
+
+.qr-code-image img {
+  max-width: 300px;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white; /* Keep QR code background white for visibility */
+}
+
+.no-qr-message {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 5px;
+  margin: 20px 0;
+  color: var(--text-color-light);
+}
+
+.qr-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.regenerate-button, .download-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.regenerate-button {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.regenerate-button:hover {
+  background-color: #d35400;
+}
+
+.regenerate-button:disabled {
+  background-color: var(--text-color-light);
+  cursor: not-allowed;
+}
+
+.download-button {
+  background-color: var(--info-color);
+  color: white;
+}
+
+.download-button:hover {
+  background-color: #2980b9;
+}
+
+/* Table Content Container */
+.tables-content {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 110px); /* Extend much further down, almost to bottom */
+}
+
+.dashboard-table-content {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: calc(100vh - 110px); /* Keep the container height */
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-table-content .tables-grid {
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.dashboard-table-content .tables-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-table-content .tables-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.dashboard-table-content .tables-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.dashboard-table-content .tables-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-management-container {
+    padding: 10px;
+  }
+  
+  .table-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .single-line-filters-container {
+    flex-wrap: wrap;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+  
+  .filter-item select {
+    width: 100%;
+  }
+  
+  .tables-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .status-actions {
+    width: 100%;
+  }
+  
+  .card-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .card-buttons button {
+    flex: 1;
+  }
+  
+  .add-table-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .tables-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+/* Add these CSS rules to your TableManagement.css file to fix the card height */
+
+/* Card Base - Fixed Height */
+.table-card {
+  background: rgba(40, 30, 35, 0.7) !important; /* Dark background that matches theme */
+  border-radius: 6px;
+  padding: 12px; /* Reduced from 15px */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4) !important;
+  margin-bottom: 20px; /* Increased from 12px to give more space between rows */
+  position: relative;
+  border: none;
+  color: #e0e0e0 !important; /* Light text for dark background */
+  max-width: 100%;
+  border-left: none !important; /* Remove left border */
+  height: auto !important; /* Fix: Allow height to be determined by content */
+  min-height: 200px !important; /* Fix: Set a reasonable minimum height */
+  max-height: 240px !important; /* Fix: Limit maximum height */
+  overflow: hidden !important; /* Hide overflow */
+  display: flex !important; /* Use flexbox layout */
+  flex-direction: column !important; /* Stack children vertically */
+}
+
+/* Make sure the grid layout works well with fixed height cards */
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px; /* Increased from 15px to give more space between cards */
+  padding-bottom: 20px; /* Add padding at the bottom to prevent cut-off */
+  flex: 1;
+  overflow-y: auto; /* Make grid scrollable */
+  max-height: calc(100vh - 220px); /* Allow space for filters and padding */
+}
+
+/* Card Header - Reduce height */
+.table-card .table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px; /* Reduced from 8px */
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  flex: 0 0 auto !important; /* Don't allow header to flex */
+}
+
+/* Table Details - Reduce spacing */
+.table-details {
+  margin-bottom: 6px; /* Reduced from 8px */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 6px; /* Reduced from 8px */
+  flex: 0 0 auto !important; /* Don't allow details to flex */
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 0; /* Reduced from 2px */
+  border-bottom: none;
+}
+
+/* Table Actions - At the bottom */
+.table-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: auto !important; /* Push actions to bottom */
+  flex: 0 0 auto !important; /* Don't allow actions to flex */
+}
+
+/* Status dropdown - Reduce height */
+.status-select {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid rgba(120, 120, 120, 0.2) !important;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #d1d5db !important;
+  background-color: rgba(30, 25, 30, 0.8) !important;
+  margin-bottom: 5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  height: 26px;
+}
+
+/* Card buttons - More compact */
+.card-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-bottom: 8px; /* Add some bottom margin */
+}
+
+.qr-button, .edit-button, .delete-button {
+  padding: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}

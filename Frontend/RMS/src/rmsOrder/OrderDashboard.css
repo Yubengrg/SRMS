@@ -1,0 +1,880 @@
+/* OrderDashboardDark.css - Dark theme for Order System to match Dashboard */
+
+/* Base styling to match Dashboard theme */
+.order-management-container {
+  background-color: var(--background-color, #1A1E2D);
+  color: var(--text-color, #D1D5DB);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header styling */
+.order-header {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-header h1 {
+  color: var(--text-color-dark, #FFFFFF);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-color, #D1D5DB);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--button-border-radius, 10px);
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Order Dashboard Card */
+.order-dashboard-card, 
+.dashboard-content-card {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: calc(100vh - 110px); /* Extend to match table management */
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-card-header,
+.order-dashboard-header {
+  margin-bottom: 20px;
+}
+
+/* Make tabs container flex to fill available space */
+.dark-theme-tabs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make tab content expand to fill available space */
+.dark-theme-tabs .ant-tabs-content {
+  flex: 1;
+  height: 100%;
+}
+
+.dark-theme-tabs .ant-tabs-tabpane {
+  height: 100%;
+}
+
+/* Ant Design Component Overrides */
+/* Card styling */
+.order-management-container .ant-card,
+.dashboard-content-section .ant-card {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-color, #D1D5DB);
+}
+
+/* Typography */
+.order-management-container .ant-typography,
+.dashboard-content-section .ant-typography {
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container h1.ant-typography,
+.order-management-container h2.ant-typography,
+.order-management-container h3.ant-typography,
+.order-management-container h4.ant-typography,
+.dashboard-content-section h1.ant-typography,
+.dashboard-content-section h2.ant-typography,
+.dashboard-content-section h3.ant-typography,
+.dashboard-content-section h4.ant-typography {
+  color: var(--text-color-dark, #FFFFFF);
+}
+
+.order-management-container .ant-typography-secondary,
+.dashboard-content-section .ant-typography-secondary {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+/* Input fields */
+.order-management-container .ant-input,
+.dashboard-content-section .ant-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container .ant-input:focus,
+.dashboard-content-section .ant-input:focus {
+  border-color: var(--primary-color, #FFB930);
+  box-shadow: 0 0 0 2px rgba(255, 185, 48, 0.2);
+}
+
+.order-management-container .ant-input-affix-wrapper,
+.dashboard-content-section .ant-input-affix-wrapper {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container .ant-input-affix-wrapper:focus,
+.order-management-container .ant-input-affix-wrapper-focused,
+.dashboard-content-section .ant-input-affix-wrapper:focus,
+.dashboard-content-section .ant-input-affix-wrapper-focused {
+  border-color: var(--primary-color, #FFB930);
+  box-shadow: 0 0 0 2px rgba(255, 185, 48, 0.2);
+}
+
+.order-management-container .ant-input-prefix,
+.dashboard-content-section .ant-input-prefix {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+/* Select Dropdown */
+.order-management-container .ant-select,
+.dashboard-content-section .ant-select {
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container .ant-select-selector,
+.dashboard-content-section .ant-select-selector {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color, #D1D5DB) !important;
+}
+
+.order-management-container .ant-select-focused .ant-select-selector,
+.dashboard-content-section .ant-select-focused .ant-select-selector {
+  border-color: var(--primary-color, #FFB930) !important;
+  box-shadow: 0 0 0 2px rgba(255, 185, 48, 0.2) !important;
+}
+
+.order-management-container .ant-select-arrow,
+.dashboard-content-section .ant-select-arrow {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+/* Tabs */
+.order-management-container .ant-tabs,
+.dashboard-content-section .ant-tabs {
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container .ant-tabs-tab,
+.dashboard-content-section .ant-tabs-tab {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-color, #D1D5DB) !important;
+}
+
+.order-management-container .ant-tabs-tab-active,
+.dashboard-content-section .ant-tabs-tab-active {
+  background-color: rgba(255, 185, 48, 0.15) !important;
+}
+
+.order-management-container .ant-tabs-tab-active .ant-tabs-tab-btn,
+.dashboard-content-section .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color, #FFB930) !important;
+  font-weight: 500;
+}
+
+.order-management-container .ant-tabs-tab:hover,
+.dashboard-content-section .ant-tabs-tab:hover {
+  color: var(--primary-color, #FFB930) !important;
+}
+
+.order-management-container .ant-tabs-ink-bar,
+.dashboard-content-section .ant-tabs-ink-bar {
+  background-color: var(--primary-color, #FFB930) !important;
+}
+
+/* Order Cards */
+.order-card {
+  background-color: var(--card-bg, #242A3D) !important;
+  border-radius: var(--card-border-radius, 12px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-color, #D1D5DB) !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 15px !important; /* Consistent spacing between cards */
+}
+
+.order-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.order-card.status-pending {
+  border-left: 4px solid var(--warning-color, #F59F00) !important;
+}
+
+.order-card.status-in-progress {
+  border-left: 4px solid var(--info-color, #4299E1) !important;
+}
+
+.order-card.status-ready {
+  border-left: 4px solid var(--success-color, #FFB930) !important;
+}
+
+.order-card.status-served {
+  border-left: 4px solid var(--text-color-light, #A5B1CD) !important;
+}
+
+/* Tables */
+.order-management-container .ant-table,
+.dashboard-content-section .ant-table {
+  background-color: transparent;
+}
+
+.order-management-container .ant-table-thead > tr > th,
+.dashboard-content-section .ant-table-thead > tr > th {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-color-light, #A5B1CD) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.order-management-container .ant-table-tbody > tr > td,
+.dashboard-content-section .ant-table-tbody > tr > td {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-color, #D1D5DB) !important;
+}
+
+.order-management-container .ant-table-tbody > tr:hover > td,
+.dashboard-content-section .ant-table-tbody > tr:hover > td {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.order-management-container .ant-table-tbody > tr.ant-table-row-selected > td,
+.dashboard-content-section .ant-table-tbody > tr.ant-table-row-selected > td {
+  background-color: rgba(255, 185, 48, 0.1) !important;
+}
+
+/* Buttons */
+.order-management-container .ant-btn,
+.dashboard-content-section .ant-btn {
+  border-radius: var(--button-border-radius, 10px);
+}
+
+.order-management-container .ant-btn-primary,
+.dashboard-content-section .ant-btn-primary {
+  background: linear-gradient(to right, var(--primary-color, #FFB930), var(--primary-dark, #F59F00));
+  border: none;
+  color: #1A1E2D;
+  font-weight: 500;
+}
+
+.order-management-container .ant-btn-primary:hover,
+.dashboard-content-section .ant-btn-primary:hover {
+  background: var(--primary-dark, #F59F00);
+  color: #1A1E2D;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 159, 0, 0.3);
+}
+
+.order-management-container .ant-btn-success,
+.dashboard-content-section .ant-btn-success {
+  background-color: rgba(255, 185, 48, 0.85);
+  border: none;
+  color: #1A1E2D;
+}
+
+.order-management-container .ant-btn-success:hover,
+.dashboard-content-section .ant-btn-success:hover {
+  background-color: var(--primary-color, #FFB930);
+  color: #1A1E2D;
+}
+
+.order-management-container .ant-btn-default,
+.dashboard-content-section .ant-btn-default {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color, #D1D5DB);
+}
+
+.order-management-container .ant-btn-default:hover,
+.dashboard-content-section .ant-btn-default:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-color-dark, #FFFFFF);
+}
+
+.order-management-container .ant-btn-dangerous,
+.dashboard-content-section .ant-btn-dangerous {
+  color: var(--danger-color, #E53E3E);
+  border-color: var(--danger-color, #E53E3E);
+}
+
+.order-management-container .ant-btn-dangerous:hover,
+.dashboard-content-section .ant-btn-dangerous:hover {
+  color: #fff;
+  background-color: var(--danger-color, #E53E3E);
+  border-color: var(--danger-color, #E53E3E);
+}
+
+.order-management-container .ant-btn-link,
+.dashboard-content-section .ant-btn-link {
+  color: var(--primary-color, #FFB930);
+}
+
+.order-management-container .ant-btn-link:hover,
+.dashboard-content-section .ant-btn-link:hover {
+  color: var(--primary-light, #FFCD5C);
+}
+
+/* Empty State */
+.order-management-container .ant-empty,
+.dashboard-content-section .ant-empty {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+.order-management-container .ant-empty-img-simple-ellipse,
+.dashboard-content-section .ant-empty-img-simple-ellipse {
+  fill: #242A3D !important;
+}
+
+.order-management-container .ant-empty-img-simple-path,
+.dashboard-content-section .ant-empty-img-simple-path {
+  fill: #2D3748 !important;
+}
+
+.order-management-container .ant-empty-img-simple-g,
+.dashboard-content-section .ant-empty-img-simple-g {
+  stroke: var(--text-color-light, #A5B1CD) !important;
+}
+
+/* Badge & Tag */
+.order-management-container .ant-badge-status-dot,
+.dashboard-content-section .ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.order-management-container .ant-badge-status-text,
+.dashboard-content-section .ant-badge-status-text {
+  color: var(--text-color, #D1D5DB);
+}
+
+/* Modal Styling */
+.ant-modal-content {
+  background-color: var(--card-bg, #242A3D);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2);
+  border-radius: var(--card-border-radius, 12px);
+}
+
+.ant-modal-header {
+  background-color: var(--card-bg, #242A3D);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--card-border-radius, 12px) var(--card-border-radius, 12px) 0 0;
+}
+
+.ant-modal-title {
+  color: var(--text-color-dark, #FFFFFF);
+}
+
+.ant-modal-close {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+.ant-modal-close:hover {
+  color: var(--text-color-dark, #FFFFFF);
+}
+
+.ant-modal-body {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Order Details Modal */
+.ant-descriptions-item-label {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+.ant-descriptions-item-content {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-steps {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-steps-item-title {
+  color: var(--text-color-light, #A5B1CD) !important;
+}
+
+.ant-steps-item-icon {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-steps-item-icon .ant-steps-icon {
+  color: var(--text-color-light, #A5B1CD) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: rgba(255, 185, 48, 0.2) !important;
+  border-color: var(--primary-color, #FFB930) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
+  color: var(--primary-color, #FFB930) !important;
+}
+
+.ant-steps-item-finish .ant-steps-item-title {
+  color: var(--text-color, #D1D5DB) !important;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background-color: var(--primary-color, #FFB930) !important;
+  border-color: var(--primary-color, #FFB930) !important;
+}
+
+.ant-steps-item-process .ant-steps-item-icon .ant-steps-icon {
+  color: #1A1E2D !important;
+}
+
+.ant-steps-item-process .ant-steps-item-title {
+  color: var(--text-color-dark, #FFFFFF) !important;
+}
+
+.ant-steps-item-wait .ant-steps-item-icon {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-steps-item-wait .ant-steps-item-title {
+  color: var(--text-color-light, #A5B1CD) !important;
+}
+
+.ant-steps-item-tail::after {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
+  background-color: var(--primary-color, #FFB930) !important;
+}
+
+/* Statistic */
+.ant-statistic-title {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+.ant-statistic-content {
+  color: var(--text-color, #D1D5DB);
+}
+
+/* Timeline */
+.ant-timeline-item-tail {
+  border-left: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.ant-timeline-item-content {
+  color: var(--text-color, #D1D5DB);
+}
+
+/* Collapse */
+.ant-collapse {
+  background-color: transparent;
+  border: none;
+}
+
+.ant-collapse-ghost > .ant-collapse-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ant-collapse-ghost > .ant-collapse-item > .ant-collapse-header {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-collapse-ghost > .ant-collapse-item > .ant-collapse-header:hover {
+  color: var(--primary-color, #FFB930);
+}
+
+/* Kitchen View specifically */
+.kitchen-view-card {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.kitchen-order-card {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.kitchen-order-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Fix for notification popup which is on body level */
+.ant-notification {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ant-notification-notice {
+  background-color: var(--card-bg, #242A3D);
+  border-radius: var(--card-border-radius, 12px);
+}
+
+.ant-notification-notice-message {
+  color: var(--text-color-dark, #FFFFFF);
+}
+
+.ant-notification-notice-description {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-notification-notice-close {
+  color: var(--text-color-light, #A5B1CD);
+}
+
+/* Loading spinner */
+.ant-spin-dot-item {
+  background-color: var(--primary-color, #FFB930);
+}
+
+/* Popover and dropdown menus */
+.ant-select-dropdown {
+  background-color: var(--card-bg, #242A3D);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--button-border-radius, 10px);
+}
+
+.ant-select-item {
+  color: var(--text-color, #D1D5DB);
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background-color: rgba(255, 185, 48, 0.15);
+}
+
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: rgba(255, 185, 48, 0.25);
+  color: var(--primary-color, #FFB930);
+  font-weight: 500;
+}
+
+/* Order Cards Container - Improved layout */
+.order-cards-container {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Consistent spacing between cards */
+  overflow-y: auto;
+  padding-bottom: 20px; /* Add bottom padding to prevent cut-off */
+  height: 100%; /* Take full available height */
+}
+/* Additional CSS for Cancelled Orders - Add to OrderDashboard.css */
+
+/* Cancelled Order Card Styling */
+.order-card.cancelled-order {
+  background: linear-gradient(135deg, rgba(255, 77, 79, 0.05) 0%, rgba(255, 77, 79, 0.02) 100%) !important;
+  border: 1px solid rgba(255, 77, 79, 0.2) !important;
+  border-left: 4px solid #ff4d4f !important;
+  opacity: 0.85;
+  position: relative;
+}
+
+.order-card.cancelled-order::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 77, 79, 0.05) 10px,
+    rgba(255, 77, 79, 0.05) 20px
+  );
+  pointer-events: none;
+  border-radius: var(--card-border-radius, 12px);
+}
+
+.order-card.cancelled-order:hover {
+  transform: none !important; /* Disable hover transform for cancelled orders */
+  box-shadow: 0 2px 4px rgba(255, 77, 79, 0.2) !important;
+}
+
+/* Cancelled Order Status Styling */
+.order-card.status-cancelled {
+  border-left: 4px solid #ff4d4f !important;
+}
+
+/* Cancelled Tab Styling */
+.dark-theme-tabs .ant-tabs-tab[data-node-key="cancelled"] {
+  background-color: rgba(255, 77, 79, 0.1) !important;
+  border-color: rgba(255, 77, 79, 0.2) !important;
+}
+
+.dark-theme-tabs .ant-tabs-tab[data-node-key="cancelled"]:hover {
+  background-color: rgba(255, 77, 79, 0.15) !important;
+}
+
+.dark-theme-tabs .ant-tabs-tab-active[data-node-key="cancelled"] {
+  background-color: rgba(255, 77, 79, 0.2) !important;
+  border-color: #ff4d4f !important;
+}
+
+/* Cancelled Order Text Styling */
+.cancelled-order .ant-typography {
+  color: rgba(255, 77, 79, 0.9) !important;
+}
+
+.cancelled-order .ant-tag {
+  background-color: rgba(255, 77, 79, 0.1) !important;
+  border-color: rgba(255, 77, 79, 0.3) !important;
+  color: #ff4d4f !important;
+}
+
+/* Cancelled Order Modal Styling */
+.ant-modal-content .cancelled-order-modal {
+  border: 2px solid rgba(255, 77, 79, 0.3);
+}
+
+.ant-modal-header.cancelled-order-header {
+  background: linear-gradient(135deg, rgba(255, 77, 79, 0.1) 0%, rgba(255, 77, 79, 0.05) 100%);
+  border-bottom: 1px solid rgba(255, 77, 79, 0.2);
+}
+
+/* Cancelled Order Alert Styling */
+.ant-alert-error.cancelled-order-alert {
+  background-color: rgba(255, 77, 79, 0.1);
+  border: 1px solid rgba(255, 77, 79, 0.3);
+}
+
+/* Cancelled Order Table Row Styling */
+.ant-table-tbody > tr.cancelled-order-row > td {
+  background-color: rgba(255, 77, 79, 0.05) !important;
+  color: rgba(255, 77, 79, 0.8) !important;
+  text-decoration: line-through;
+}
+
+.ant-table-tbody > tr.cancelled-order-row:hover > td {
+  background-color: rgba(255, 77, 79, 0.1) !important;
+}
+
+/* Cancelled Order Steps Styling */
+.ant-steps.cancelled-order-steps {
+  opacity: 0.6;
+}
+
+.ant-steps.cancelled-order-steps .ant-steps-item-icon {
+  background-color: rgba(255, 77, 79, 0.2) !important;
+  border-color: #ff4d4f !important;
+}
+
+.ant-steps.cancelled-order-steps .ant-steps-item-icon .ant-steps-icon {
+  color: #ff4d4f !important;
+}
+
+.ant-steps.cancelled-order-steps .ant-steps-item-title {
+  color: rgba(255, 77, 79, 0.8) !important;
+  text-decoration: line-through;
+}
+
+/* Cancelled Order Statistic Styling */
+.ant-statistic.cancelled-order-stat .ant-statistic-content {
+  color: #ff4d4f !important;
+  text-decoration: line-through;
+}
+
+.ant-statistic.cancelled-order-stat .ant-statistic-title {
+  color: rgba(255, 77, 79, 0.7) !important;
+}
+
+/* Cancelled Order Button Styling */
+.cancelled-order .ant-btn {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancelled-order .ant-btn:hover {
+  opacity: 0.6;
+  transform: none;
+}
+
+/* Cancelled Order Badge Styling */
+.ant-badge-status-error.cancelled-order-badge .ant-badge-status-dot {
+  background-color: #ff4d4f;
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Cancelled Order Timeline Styling */
+.ant-timeline-item.cancelled-timeline-item .ant-timeline-item-head {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.ant-timeline-item.cancelled-timeline-item .ant-timeline-item-tail {
+  border-left: 2px solid rgba(255, 77, 79, 0.3);
+}
+
+.ant-timeline-item.cancelled-timeline-item .ant-timeline-item-content {
+  color: rgba(255, 77, 79, 0.9);
+}
+
+/* Cancelled Order Tag Styling */
+.ant-tag.cancelled-order-tag {
+  background-color: rgba(255, 77, 79, 0.1);
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+  font-weight: bold;
+  animation: blink-red 1.5s infinite;
+}
+
+@keyframes blink-red {
+  0%, 50% { opacity: 1; }
+  25%, 75% { opacity: 0.7; }
+}
+
+/* Cancelled Order Empty State */
+.ant-empty.cancelled-orders-empty .ant-empty-description {
+  color: rgba(255, 77, 79, 0.6);
+}
+
+.ant-empty.cancelled-orders-empty .ant-empty-img-simple-ellipse {
+  fill: rgba(255, 77, 79, 0.1) !important;
+}
+
+.ant-empty.cancelled-orders-empty .ant-empty-img-simple-path {
+  fill: rgba(255, 77, 79, 0.2) !important;
+}
+
+/* Print Receipt Styling for Cancelled Orders */
+@media print {
+  .cancelled-order-print {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      #ffebee 5px,
+      #ffebee 10px
+    );
+  }
+  
+  .cancelled-order-print .cancelled {
+    color: #d32f2f !important;
+    text-decoration: line-through !important;
+    font-weight: bold !important;
+  }
+  
+  .cancelled-notice {
+    background: #ffebee !important;
+    border: 2px solid #f44336 !important;
+    padding: 10px !important;
+    margin: 10px 0 !important;
+    color: #d32f2f !important;
+    font-weight: bold !important;
+    text-align: center !important;
+  }
+}
+
+/* Responsive Design for Cancelled Orders */
+@media (max-width: 768px) {
+  .order-card.cancelled-order {
+    margin-bottom: 12px;
+  }
+  
+  .cancelled-order-alert {
+    margin-bottom: 16px;
+  }
+  
+  .cancelled-order .ant-descriptions-item-label,
+  .cancelled-order .ant-descriptions-item-content {
+    font-size: 12px;
+  }
+}
+
+/* Dark Theme Specific Cancelled Order Styling */
+@media (prefers-color-scheme: dark) {
+  .order-card.cancelled-order {
+    background: linear-gradient(135deg, rgba(255, 77, 79, 0.08) 0%, rgba(255, 77, 79, 0.03) 100%) !important;
+    border-color: rgba(255, 77, 79, 0.3) !important;
+  }
+  
+  .cancelled-order .ant-typography {
+    color: rgba(255, 140, 140, 0.9) !important;
+  }
+  
+  .cancelled-order .ant-tag {
+    background-color: rgba(255, 77, 79, 0.15) !important;
+    border-color: rgba(255, 77, 79, 0.4) !important;
+    color: #ff8a80 !important;
+  }
+}
+
+/* Loading State for Cancelled Orders */
+.cancelled-orders-loading {
+  text-align: center;
+  padding: 40px 0;
+  color: rgba(255, 77, 79, 0.6);
+}
+
+.cancelled-orders-loading .ant-spin-dot-item {
+  background-color: #ff4d4f;
+}
+
+/* Cancelled Order Notification Styling */
+.ant-notification-notice.cancelled-order-notification {
+  border-left: 4px solid #ff4d4f;
+  background-color: rgba(255, 77, 79, 0.05);
+}
+
+.ant-notification-notice.cancelled-order-notification .ant-notification-notice-icon {
+  color: #ff4d4f;
+}
+
+/* Accessibility Improvements for Cancelled Orders */
+.cancelled-order[aria-label]::after {
+  content: " (Cancelled Order)";
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .order-card.cancelled-order {
+    border: 3px solid #ff0000 !important;
+    background-color: #ffe6e6 !important;
+  }
+  
+  .cancelled-order .ant-typography {
+    color: #cc0000 !important;
+    font-weight: bold !important;
+  }
+}

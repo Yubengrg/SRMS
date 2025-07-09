@@ -1,0 +1,427 @@
+/* Signup.css */
+:root {
+  --dark-bg: #1a1e23;
+  --card-bg: #24292e;
+  --gold-accent: #f8c52c; /* Main gold color from your register button */
+  --text-color: #ffffff;
+  --input-bg: #31363c;
+  --label-color: #ffffff; /* Changed to white for labels */
+  --secondary-text: #b0b0b0;
+  --error-color: #ff5a5a;
+  --success-color: #4caf50;
+  --button-hover: #e6b31a;
+  --form-bg: #1e2433; /* Slightly darker blue from your form */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Left side with background image */
+.welcome-side {
+  flex: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('/path-to-your-city-image.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+.welcome-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.welcome-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--gold-accent);
+  margin-top: 0;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.footer-links {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--gold-accent);
+}
+
+/* Right side with form */
+.form-side {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--form-bg);
+  padding: 0;
+  overflow-y: auto;
+}
+
+.signup-card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--form-bg);
+  overflow: auto;
+  padding: 2.5rem !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card-header h2 {
+  font-size: 32px;
+  color: var(--gold-accent); /* Using gold color for Sign Up title */
+  margin: 0 0 20px 0;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Fix for the Google Sign-in button */
+.google-signin-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#google-signin-button {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Custom Google button to ensure visibility */
+.google-button {
+  width: 100%;
+  height: 45px;
+  background-color: #4285F4;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.google-button img {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.divider span {
+  margin: 0 15px;
+  color: var(--secondary-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* IMPORTANT: Fix for label visibility - now WHITE */
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff !important; /* White for maximum visibility */
+  margin-left: 2px;
+}
+
+/* Add these styles to directly target labels by element if needed */
+label {
+  color: #ffffff !important;
+}
+
+.form-group input {
+  height: 45px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: white; /* White background for inputs like in screenshot */
+  color: #333; /* Dark text for inputs with white background */
+  font-size: 15px;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  border-width: 2px;
+}
+
+.form-group input::placeholder {
+  color: #999; /* Darker placeholder for white inputs */
+}
+
+.signup-button {
+  height: 50px;
+  margin-top: 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--gold-accent); /* Gold color from screenshot */
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.signup-button:hover {
+  background-color: var(--button-hover);
+}
+
+.signup-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--error-color);
+  text-align: center;
+  margin: 12px 0;
+  padding: 12px;
+  background-color: rgba(255, 90, 90, 0.1);
+  border-radius: 4px;
+  word-break: break-word;
+  font-size: 14px;
+  border-left: 3px solid var(--error-color);
+}
+
+.success-message {
+  color: var(--success-color);
+  text-align: center;
+  margin: 12px 0;
+  padding: 12px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 4px;
+  word-break: break-word;
+  font-size: 14px;
+  border-left: 3px solid var(--success-color);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--secondary-text);
+  font-size: 14px;
+}
+
+.login-link a {
+  color: var(--gold-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.login-link a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* Close button has been completely removed */
+
+/* Styling for OR divider */
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: var(--form-bg);
+  position: relative;
+  z-index: 1;
+  color: var(--secondary-text);
+}
+
+/* Fix to ensure the highest specificity for labels - NOW WHITE */
+.signup-form .form-group label, 
+form label, 
+.form-side label, 
+label {
+  color: #ffffff !important;
+}
+
+/* Google button override */
+.abcRioButton.abcRioButtonBlue {
+  background-color: #4285F4 !important;
+  width: 100% !important;
+  height: 45px !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.abcRioButtonContents {
+  color: white !important;
+  font-size: 16px !important;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .signup-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+  }
+  
+  .welcome-side {
+    flex: none;
+    height: 40vh;
+  }
+  
+  .form-side {
+    width: 100%;
+    height: auto;
+  }
+  
+  .signup-card {
+    height: auto;
+    padding: 2rem 1.5rem !important;
+    border-radius: 20px 20px 0 0;
+    margin-top: -20px !important;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcome-side {
+    height: 30vh;
+  }
+  
+  .signup-card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .form-group {
+    gap: 6px;
+  }
+  
+  .form-group input {
+    height: 40px;
+  }
+}
+
+/* These CSS rules MUST be at the end of the file to override previous styles */
+/* Underlined input style with !important to ensure they're applied */
+.form-side .signup-card .signup-form .form-group input {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 0 !important;
+  color: white !important;
+  box-shadow: none !important;
+  padding: 0 0 8px 0 !important;
+}
+
+.form-side .signup-card .signup-form .form-group input:focus {
+  border-bottom: 2px solid #f8c52c !important;
+  outline: none !important;
+}
+
+.form-side .signup-card .signup-form .form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
